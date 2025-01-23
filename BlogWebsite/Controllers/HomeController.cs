@@ -9,9 +9,13 @@ namespace BlogWebsite.Controllers
             return View();
         }
 
-        public IActionResult Welcome()
+        [HttpGet("{Name}/{FName}")]
+        [Route("Home/Welcome")]
+        public IActionResult Welcome(string? Name, string? FName)
         {
+            TempData["Info"] = ("Your Name Is " + Name + " and Father Name Is " + FName);
             return View();
         }
+
     }
 }
