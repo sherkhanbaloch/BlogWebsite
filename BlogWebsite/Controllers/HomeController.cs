@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BlogWebsite.ViewModels;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BlogWebsite.Controllers
 {
@@ -29,10 +30,17 @@ namespace BlogWebsite.Controllers
         //    return View();
         //}
 
+        //[HttpPost]
+        //public IActionResult MyData(string Name, string FName)
+        //{
+        //    TempData["Info"] = ("Your Name Is " + Name + " and Father Name Is " + FName);
+        //    return View("Welcome");
+        //}
+
         [HttpPost]
-        public IActionResult MyData(string Name, string FName)
+        public IActionResult MyData(Student student)
         {
-            TempData["Info"] = ("Your Name Is " + Name + " and Father Name Is " + FName);
+            TempData["Info"] = ("Your Name Is " + student.Name + " and Father Name Is " + student.FName + " and your Mobile Number Is " + student.Mobile);
             return View("Welcome");
         }
 

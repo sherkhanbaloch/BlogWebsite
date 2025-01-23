@@ -1,4 +1,6 @@
-﻿
+﻿@using BlogWebsite.ViewModels
+@model Student
+
 <h1>Welcome To The Software Engineering Channel</h1>
 <br />
 <h2>This is the .NET 6 with C# and MVC Series. . .</h2>
@@ -16,12 +18,27 @@
 
 </form> *@
 
-<form method="post" asp-controller="Home" asp-action="MyData">
+@* <form method="post" asp-controller="Home" asp-action="MyData">
 
     <input type="text" name="Name" placeholder="Enter Name" />
     <br />
     <br />
     <input type="text" name="FName" placeholder="Enter Father Name" />
+    <br />
+    <br />
+    <button type="submit" class="btn btn-primary">Send Data</button>
+
+</form> *@
+
+<form method="post" asp-controller="Home" asp-action="MyData">
+
+    <input asp-for="Name" placeholder="Enter Name" />
+    <br />
+    <br />
+    <input asp-for="FName" placeholder="Enter Father Name" />
+    <br />
+    <br />
+    <input asp-for="Mobile" placeholder="Enter Mobile Number" />
     <br />
     <br />
     <button type="submit" class="btn btn-primary">Send Data</button>
