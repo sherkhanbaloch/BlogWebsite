@@ -1,5 +1,12 @@
+using BlogWebsite.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddMvc();
+
+var myCon = builder.Configuration.GetConnectionString("con");
+builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(myCon));
+
 var app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
