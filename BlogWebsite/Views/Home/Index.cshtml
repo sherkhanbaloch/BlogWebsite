@@ -1,5 +1,5 @@
-﻿@using BlogWebsite.ViewModels
-@model Student
+﻿@using BlogWebsite.Models
+@model Students
 
 <h1>Welcome To The Software Engineering Channel</h1>
 <br />
@@ -30,7 +30,7 @@
 
 </form> *@
 
-<form method="post" asp-controller="Home" asp-action="MyData">
+<form method="post" asp-controller="Home" asp-action="Index">
 
     <input asp-for="Name" placeholder="Enter Name" />
     <br />
@@ -44,3 +44,6 @@
     <button type="submit" class="btn btn-primary">Send Data</button>
 
 </form>
+
+
+<h1 class="text-success">@TempData["Message"]</h1>
